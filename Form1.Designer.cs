@@ -1,0 +1,422 @@
+#nullable enable
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace edCircularLinkedList
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer? components = null;
+        private Label lblTitulo = null!;
+        private Label lblId = null!;
+        private Label lblNombre = null!;
+        private Label lblGenero = null!;
+        private Label lblPlataforma = null!;
+        private TextBox txtId = null!;
+        private TextBox txtNombre = null!;
+        private TextBox txtGenero = null!;
+        private TextBox txtPlataforma = null!;
+        private Button btnAgregar = null!;
+        private Button btnBuscar = null!;
+        private Button btnEliminar = null!;
+        private Button btnContar = null!;
+        private Button btnLimpiar = null!;
+        private DataGridView dgvVideojuegos = null!;
+        private Label lblTotal = null!;
+        private Label lblMensaje = null!;
+        private DataGridView dgvTiempos = null!;
+        private DataGridView dgvLote = null!;
+        private NumericUpDown nudCantidad = null!;
+        private ComboBox cboOrden = null!;
+        private Button btnComparar = null!;
+        private Button btnCancelar = null!;
+        private Label lblResumenLote = null!;
+        private Label lblReloj = null!;
+        private TabControl tabControlPrincipal = null!;
+        private TabPage tabPagePrincipal = null!;
+        private TabPage tabPageCsv = null!;
+        private Button btnSeleccionarCsv = null!;
+        private TextBox txtResultadoCsv = null!;
+        private DataGridView dgvCsvDatos = null!;
+        private DataGridView dgvCsvTiempos = null!;
+        private Label lblResumenCsv = null!;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing) components?.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            lblTitulo = new Label();
+            lblId = new Label();
+            lblNombre = new Label();
+            lblGenero = new Label();
+            lblPlataforma = new Label();
+            txtId = new TextBox();
+            txtNombre = new TextBox();
+            txtGenero = new TextBox();
+            txtPlataforma = new TextBox();
+            btnAgregar = new Button();
+            btnBuscar = new Button();
+            btnEliminar = new Button();
+            btnContar = new Button();
+            btnLimpiar = new Button();
+            dgvVideojuegos = new DataGridView();
+            lblTotal = new Label();
+            lblMensaje = new Label();
+            dgvTiempos = new DataGridView();
+            dgvLote = new DataGridView();
+            nudCantidad = new NumericUpDown();
+            cboOrden = new ComboBox();
+            btnComparar = new Button();
+            btnCancelar = new Button();
+            lblResumenLote = new Label();
+            lblReloj = new Label();
+            tabControlPrincipal = new TabControl();
+            tabPagePrincipal = new TabPage();
+            tabPageCsv = new TabPage();
+            btnSeleccionarCsv = new Button();
+            txtResultadoCsv = new TextBox();
+            dgvCsvDatos = new DataGridView();
+            dgvCsvTiempos = new DataGridView();
+            lblResumenCsv = new Label();
+
+            TableLayoutPanel contenedor = new TableLayoutPanel();
+            TableLayoutPanel cuerpo = new TableLayoutPanel();
+            TableLayoutPanel izquierda = new TableLayoutPanel();
+            TableLayoutPanel derecha = new TableLayoutPanel();
+            GroupBox grupoCaptura = new GroupBox();
+            TableLayoutPanel captura = new TableLayoutPanel();
+            FlowLayoutPanel botones = new FlowLayoutPanel();
+            GroupBox grupoTiempos = new GroupBox();
+            TableLayoutPanel tiempos = new TableLayoutPanel();
+            Label notaTiempos = new Label();
+            Label diferenciaTiempos = new Label();
+            GroupBox grupoLote = new GroupBox();
+            TableLayoutPanel lote = new TableLayoutPanel();
+            TableLayoutPanel opciones = new TableLayoutPanel();
+            Label lblCantidad = new Label();
+            Label lblOrden = new Label();
+            FlowLayoutPanel accionesLote = new FlowLayoutPanel();
+            Label lblRepeticiones = new Label();
+            Label notaLote = new Label();
+
+            ((System.ComponentModel.ISupportInitialize)dgvVideojuegos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTiempos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLote).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvDatos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvTiempos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
+            SuspendLayout();
+
+            // Contenedor adaptable: videojuegos a la izquierda, mediciones a la derecha.
+            contenedor.Dock = DockStyle.Fill;
+            contenedor.Padding = new Padding(16);
+            contenedor.ColumnCount = 1;
+            contenedor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            contenedor.RowCount = 3;
+            contenedor.RowStyles.Add(new RowStyle(SizeType.Absolute, 46));
+            contenedor.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            contenedor.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.Text = "Videojuegos · Comparación de inserciones en RAM";
+            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
+            cuerpo.Dock = DockStyle.Fill;
+            cuerpo.Margin = new Padding(0);
+            cuerpo.ColumnCount = 2;
+            cuerpo.RowCount = 1;
+            cuerpo.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            cuerpo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 47));
+            cuerpo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53));
+            izquierda.Dock = DockStyle.Fill;
+            izquierda.Margin = new Padding(0, 0, 10, 0);
+            izquierda.ColumnCount = 1;
+            izquierda.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            izquierda.RowCount = 3;
+            izquierda.RowStyles.Add(new RowStyle(SizeType.Absolute, 200));
+            izquierda.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            izquierda.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
+            derecha.Dock = DockStyle.Fill;
+            derecha.Margin = new Padding(0);
+            derecha.ColumnCount = 1;
+            derecha.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            derecha.RowCount = 2;
+            derecha.RowStyles.Add(new RowStyle(SizeType.Absolute, 230));
+            derecha.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+
+            grupoCaptura.Dock = DockStyle.Fill;
+            grupoCaptura.Text = "Datos del videojuego";
+            grupoCaptura.Padding = new Padding(10);
+            captura.Dock = DockStyle.Fill;
+            captura.ColumnCount = 4;
+            captura.RowCount = 4;
+            captura.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 70));
+            captura.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            captura.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75));
+            captura.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            captura.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
+            captura.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
+            captura.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
+            captura.RowStyles.Add(new RowStyle(SizeType.Absolute, 36));
+            lblId.Text = "ID:"; lblId.Dock = DockStyle.Fill; lblId.TextAlign = ContentAlignment.MiddleLeft;
+            lblNombre.Text = "Videojuego:"; lblNombre.Dock = DockStyle.Fill; lblNombre.TextAlign = ContentAlignment.MiddleLeft;
+            lblGenero.Text = "Género:"; lblGenero.Dock = DockStyle.Fill; lblGenero.TextAlign = ContentAlignment.MiddleLeft;
+            lblPlataforma.Text = "Plataforma:"; lblPlataforma.Dock = DockStyle.Fill; lblPlataforma.TextAlign = ContentAlignment.MiddleLeft;
+            txtId.Name = "txtId"; txtId.Dock = DockStyle.Fill; txtId.TabIndex = 0;
+            txtNombre.Name = "txtNombre"; txtNombre.Dock = DockStyle.Fill; txtNombre.TabIndex = 1;
+            txtGenero.Name = "txtGenero"; txtGenero.Dock = DockStyle.Fill; txtGenero.TabIndex = 2;
+            txtPlataforma.Name = "txtPlataforma"; txtPlataforma.Dock = DockStyle.Fill; txtPlataforma.TabIndex = 3;
+            captura.Controls.Add(lblId, 0, 0);
+            captura.Controls.Add(txtId, 1, 0);
+            captura.Controls.Add(lblNombre, 2, 0);
+            captura.Controls.Add(txtNombre, 3, 0);
+            captura.Controls.Add(lblGenero, 0, 1);
+            captura.Controls.Add(txtGenero, 1, 1);
+            captura.Controls.Add(lblPlataforma, 2, 1);
+            captura.Controls.Add(txtPlataforma, 3, 1);
+            botones.Dock = DockStyle.Fill; botones.Margin = new Padding(0); botones.WrapContents = false;
+            btnAgregar.Name = "btnAgregar"; btnAgregar.Text = "Agregar"; btnAgregar.Size = new Size(95, 32); btnAgregar.Click += btnAgregar_Click;
+            btnBuscar.Text = "Buscar"; btnBuscar.Size = new Size(95, 32); btnBuscar.Click += btnBuscar_Click;
+            btnEliminar.Text = "Eliminar"; btnEliminar.Size = new Size(95, 32); btnEliminar.Click += btnEliminar_Click;
+            btnContar.Name = "btnContar"; btnContar.Text = "Contar"; btnContar.Size = new Size(95, 32); btnContar.Click += btnContar_Click;
+            botones.Controls.Add(btnAgregar);
+            botones.Controls.Add(btnBuscar);
+            botones.Controls.Add(btnEliminar);
+            botones.Controls.Add(btnContar);
+            captura.Controls.Add(botones, 0, 2); captura.SetColumnSpan(botones, 4);
+            btnLimpiar.Text = "Limpiar campos"; btnLimpiar.Dock = DockStyle.Fill; btnLimpiar.Click += btnLimpiar_Click;
+            captura.Controls.Add(btnLimpiar, 0, 3); captura.SetColumnSpan(btnLimpiar, 4);
+            grupoCaptura.Controls.Add(captura);
+
+            dgvVideojuegos.Name = "dgvVideojuegos";
+            dgvVideojuegos.Dock = DockStyle.Fill;
+            dgvVideojuegos.AllowUserToAddRows = false;
+            dgvVideojuegos.AllowUserToDeleteRows = false;
+            dgvVideojuegos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvVideojuegos.BackgroundColor = Color.White;
+            dgvVideojuegos.MultiSelect = false;
+            dgvVideojuegos.ReadOnly = true;
+            dgvVideojuegos.RowHeadersVisible = false;
+            dgvVideojuegos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVideojuegos.CellClick += dgvVideojuegos_CellClick;
+            lblTotal.Dock = DockStyle.Fill;
+            lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+            lblTotal.Text = "Total de videojuegos: 0";
+            izquierda.Controls.Add(grupoCaptura, 0, 0);
+            izquierda.Controls.Add(dgvVideojuegos, 0, 1);
+            izquierda.Controls.Add(lblTotal, 0, 2);
+
+            // Tiempos reales de las altas realizadas desde el formulario.
+            grupoTiempos.Dock = DockStyle.Fill;
+            grupoTiempos.Text = "Inserciones realizadas con Agregar";
+            grupoTiempos.Padding = new Padding(10);
+            tiempos.Dock = DockStyle.Fill;
+            tiempos.ColumnCount = 1;
+            tiempos.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            tiempos.RowCount = 3;
+            tiempos.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
+            tiempos.RowStyles.Add(new RowStyle(SizeType.Absolute, 124));
+            tiempos.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            notaTiempos.Dock = DockStyle.Fill;
+            notaTiempos.Text = "Se cronometra cada alta en RAM antes de actualizar la interfaz.";
+            dgvTiempos.Name = "dgvTiempos";
+            dgvTiempos.Dock = DockStyle.Fill;
+            dgvTiempos.AllowUserToAddRows = false;
+            dgvTiempos.AllowUserToDeleteRows = false;
+            dgvTiempos.AllowUserToResizeRows = false;
+            dgvTiempos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTiempos.BackgroundColor = Color.White;
+            dgvTiempos.ReadOnly = true;
+            dgvTiempos.RowHeadersVisible = false;
+            dgvTiempos.MultiSelect = false;
+            dgvTiempos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvTiempos.DefaultCellStyle.Font = new Font("Segoe UI", 8.5F);
+            dgvTiempos.RowTemplate.Height = 24;
+            diferenciaTiempos.Dock = DockStyle.Fill;
+            diferenciaTiempos.Text = "Diferencia frente al menor acumulado. El histórico cuenta todas las altas, aunque después se eliminen.";
+            tiempos.Controls.Add(notaTiempos, 0, 0);
+            tiempos.Controls.Add(dgvTiempos, 0, 1);
+            tiempos.Controls.Add(diferenciaTiempos, 0, 2);
+            grupoTiempos.Controls.Add(tiempos);
+
+            // Lote reproducible con estructuras independientes de la captura manual.
+            grupoLote.Dock = DockStyle.Fill;
+            grupoLote.Text = "Comparación por lote · Mediana de 3 repeticiones";
+            grupoLote.Padding = new Padding(10);
+            lote.Dock = DockStyle.Fill;
+            lote.ColumnCount = 1;
+            lote.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            lote.RowCount = 5;
+            lote.RowStyles.Add(new RowStyle(SizeType.Absolute, 74));
+            lote.RowStyles.Add(new RowStyle(SizeType.Absolute, 124));
+            lote.RowStyles.Add(new RowStyle(SizeType.Absolute, 48));
+            lote.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            lote.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
+            opciones.Dock = DockStyle.Fill;
+            opciones.Margin = new Padding(0);
+            opciones.ColumnCount = 4;
+            opciones.RowCount = 2;
+            opciones.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50));
+            opciones.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
+            opciones.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55));
+            opciones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            opciones.RowStyles.Add(new RowStyle(SizeType.Absolute, 32));
+            opciones.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
+            lblCantidad.Text = "Datos:"; lblCantidad.Dock = DockStyle.Fill; lblCantidad.TextAlign = ContentAlignment.MiddleLeft;
+            nudCantidad.Name = "nudCantidad"; nudCantidad.Dock = DockStyle.Fill; nudCantidad.Minimum = 1; nudCantidad.Maximum = 50000; nudCantidad.Value = 25000; nudCantidad.ThousandsSeparator = true;
+            lblOrden.Text = "Orden:"; lblOrden.Dock = DockStyle.Fill; lblOrden.TextAlign = ContentAlignment.MiddleLeft;
+            cboOrden.Name = "cboOrden"; cboOrden.Dock = DockStyle.Fill; cboOrden.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboOrden.Items.AddRange(new object[] { "Aleatorio (semilla fija)", "Ascendente", "Descendente" });
+            opciones.Controls.Add(lblCantidad, 0, 0);
+            opciones.Controls.Add(nudCantidad, 1, 0);
+            opciones.Controls.Add(lblOrden, 2, 0);
+            opciones.Controls.Add(cboOrden, 3, 0);
+            accionesLote.Dock = DockStyle.Fill; accionesLote.Margin = new Padding(0); accionesLote.WrapContents = false;
+            btnComparar.Name = "btnComparar"; btnComparar.Text = "Comparar lote"; btnComparar.Size = new Size(135, 32); btnComparar.Click += btnComparar_Click;
+            btnCancelar.Name = "btnCancelar"; btnCancelar.Text = "Cancelar"; btnCancelar.Size = new Size(85, 32); btnCancelar.Enabled = false; btnCancelar.Click += btnCancelar_Click;
+            lblRepeticiones.AutoSize = true; lblRepeticiones.Margin = new Padding(8, 10, 0, 0); lblRepeticiones.Text = "Mismos datos en las tres.";
+            accionesLote.Controls.Add(btnComparar);
+            accionesLote.Controls.Add(btnCancelar);
+            accionesLote.Controls.Add(lblRepeticiones);
+            opciones.Controls.Add(accionesLote, 0, 1); opciones.SetColumnSpan(accionesLote, 4);
+            dgvLote.Name = "dgvLote";
+            dgvLote.Dock = DockStyle.Fill;
+            dgvLote.AllowUserToAddRows = false;
+            dgvLote.AllowUserToDeleteRows = false;
+            dgvLote.AllowUserToResizeRows = false;
+            dgvLote.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLote.BackgroundColor = Color.White;
+            dgvLote.ReadOnly = true;
+            dgvLote.RowHeadersVisible = false;
+            dgvLote.MultiSelect = false;
+            dgvLote.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvLote.DefaultCellStyle.Font = new Font("Segoe UI", 8.5F);
+            dgvLote.RowTemplate.Height = 24;
+            lblResumenLote.Name = "lblResumenLote"; lblResumenLote.Dock = DockStyle.Fill; lblResumenLote.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblResumenLote.Text = "Pulsa Comparar lote para medir las tres estructuras.";
+            notaLote.Dock = DockStyle.Fill;
+            notaLote.Text = "Mide búsqueda, creación de registros/nodos y enlaces/desplazamientos por ID. Datos e interfaz fuera del reloj. Lote en listas temporales; una sola alta puede variar mucho.";
+            lblReloj.Name = "lblReloj"; lblReloj.Dock = DockStyle.Fill; lblReloj.Font = new Font("Segoe UI", 8F); lblReloj.TextAlign = ContentAlignment.MiddleLeft;
+            lote.Controls.Add(opciones, 0, 0);
+            lote.Controls.Add(dgvLote, 0, 1);
+            lote.Controls.Add(lblResumenLote, 0, 2);
+            lote.Controls.Add(notaLote, 0, 3);
+            lote.Controls.Add(lblReloj, 0, 4);
+            grupoLote.Controls.Add(lote);
+            derecha.Controls.Add(grupoTiempos, 0, 0);
+            derecha.Controls.Add(grupoLote, 0, 1);
+            cuerpo.Controls.Add(izquierda, 0, 0);
+            cuerpo.Controls.Add(derecha, 1, 0);
+            lblMensaje.Name = "lblMensaje"; lblMensaje.Dock = DockStyle.Fill; lblMensaje.TextAlign = ContentAlignment.MiddleLeft; lblMensaje.AutoEllipsis = true;
+            contenedor.Controls.Add(lblTitulo, 0, 0);
+            contenedor.Controls.Add(cuerpo, 0, 1);
+            contenedor.Controls.Add(lblMensaje, 0, 2);
+
+            // Pestañas principales: se conserva el formulario original y se agrega la prueba CSV.
+            tabPagePrincipal.Text = "Videojuegos";
+            tabPagePrincipal.Padding = new Padding(0);
+            tabPagePrincipal.UseVisualStyleBackColor = true;
+            tabPagePrincipal.Controls.Add(contenedor);
+
+            // Pestaña de comparación CSV:
+            // arriba se muestran los registros del archivo y abajo los tiempos
+            // de inserción en las tres estructuras.
+            TableLayoutPanel csvPanel = new TableLayoutPanel();
+            csvPanel.Dock = DockStyle.Fill;
+            csvPanel.Padding = new Padding(16);
+            csvPanel.ColumnCount = 1;
+            csvPanel.RowCount = 4;
+            csvPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            csvPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
+            csvPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            csvPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 34));
+            csvPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 145));
+
+            btnSeleccionarCsv.Name = "btnSeleccionarCsv";
+            btnSeleccionarCsv.Text = "Seleccionar archivo CSV y comparar";
+            btnSeleccionarCsv.AutoSize = true;
+            btnSeleccionarCsv.Dock = DockStyle.Left;
+            btnSeleccionarCsv.Click += btnSeleccionarCsv_Click;
+
+            dgvCsvDatos.Name = "dgvCsvDatos";
+            dgvCsvDatos.Dock = DockStyle.Fill;
+            dgvCsvDatos.AllowUserToAddRows = false;
+            dgvCsvDatos.AllowUserToDeleteRows = false;
+            dgvCsvDatos.AllowUserToResizeRows = false;
+            dgvCsvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCsvDatos.BackgroundColor = Color.White;
+            dgvCsvDatos.ReadOnly = true;
+            dgvCsvDatos.RowHeadersVisible = false;
+            dgvCsvDatos.MultiSelect = false;
+            dgvCsvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCsvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvCsvDatos.DefaultCellStyle.Font = new Font("Segoe UI", 9F);
+            dgvCsvDatos.RowTemplate.Height = 24;
+
+            txtResultadoCsv.Name = "txtResultadoCsv";
+            txtResultadoCsv.Dock = DockStyle.Fill;
+            txtResultadoCsv.Multiline = false;
+            txtResultadoCsv.ReadOnly = true;
+            txtResultadoCsv.BorderStyle = BorderStyle.None;
+            txtResultadoCsv.Font = new Font("Segoe UI", 9F);
+            txtResultadoCsv.Text = "Selecciona un archivo CSV para iniciar la comparación.";
+
+            lblResumenCsv.Name = "lblResumenCsv";
+            lblResumenCsv.Dock = DockStyle.Fill;
+            lblResumenCsv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblResumenCsv.TextAlign = ContentAlignment.MiddleLeft;
+            lblResumenCsv.Text = "Los tiempos aparecerán aquí después de cargar el CSV.";
+
+            dgvCsvTiempos.Name = "dgvCsvTiempos";
+            dgvCsvTiempos.Dock = DockStyle.Fill;
+            dgvCsvTiempos.AllowUserToAddRows = false;
+            dgvCsvTiempos.AllowUserToDeleteRows = false;
+            dgvCsvTiempos.AllowUserToResizeRows = false;
+            dgvCsvTiempos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCsvTiempos.BackgroundColor = Color.White;
+            dgvCsvTiempos.ReadOnly = true;
+            dgvCsvTiempos.RowHeadersVisible = false;
+            dgvCsvTiempos.MultiSelect = false;
+            dgvCsvTiempos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvCsvTiempos.DefaultCellStyle.Font = new Font("Segoe UI", 9F);
+            dgvCsvTiempos.RowTemplate.Height = 28;
+
+            csvPanel.Controls.Add(btnSeleccionarCsv, 0, 0);
+            csvPanel.Controls.Add(dgvCsvDatos, 0, 1);
+            csvPanel.Controls.Add(lblResumenCsv, 0, 2);
+            csvPanel.Controls.Add(dgvCsvTiempos, 0, 3);
+
+            tabPageCsv.Text = "Comparación CSV";
+            tabPageCsv.Padding = new Padding(0);
+            tabPageCsv.UseVisualStyleBackColor = true;
+            tabPageCsv.Controls.Add(csvPanel);
+
+            tabControlPrincipal.Name = "tabControlPrincipal";
+            tabControlPrincipal.Dock = DockStyle.Fill;
+            tabControlPrincipal.TabPages.Add(tabPagePrincipal);
+            tabControlPrincipal.TabPages.Add(tabPageCsv);
+
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Font = new Font("Segoe UI", 9F);
+            ClientSize = new Size(1160, 740);
+            MinimumSize = new Size(1050, 730);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Lista circular, LinkedList<T> y List<T> · Stopwatch";
+            Controls.Add(tabControlPrincipal);
+            ((System.ComponentModel.ISupportInitialize)dgvVideojuegos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTiempos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLote).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvDatos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvTiempos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
+            ResumeLayout(false);
+        }
+    }
+}
