@@ -1,4 +1,5 @@
 🖥️ Análisis de Lista Circular Simplemente Enlazada (GUI & RAM)
+
 Este proyecto es una aplicación de escritorio desarrollada en C# (Windows Forms). Es una evolución del gestor de listas circulares que incorpora una Interfaz Gráfica de Usuario (GUI), análisis profundo del consumo de memoria (RAM) y mediciones avanzadas procesando inserciones por lotes.
 
 🚀 Características Principales
